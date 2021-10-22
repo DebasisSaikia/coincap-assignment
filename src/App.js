@@ -10,6 +10,7 @@ import Footer from "./components/footer";
 function App() {
   const [apiData, setApiData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   let pageItem = 50;
 
   // api call
@@ -22,18 +23,29 @@ function App() {
         setApiData(item.data);
         setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch(() => setError(true));
   }, [pageItem]);
+
+  const ErrorComponent=()=>{
+    return(
+      <div className="error_container">
+        <h1>Something Went Wrong ! Please refresh the page</h1>
+      </div>
+    )
+  }
 
   return (
     <Layout>
       {loading ? (
-        <Loader/>
+        <>
+        {error && <ErrorComponent/>}
+        <Loader />
+        </>
       ) : (
         <>
           <Banner />
           <TableData data={apiData} pageSet={pageItem} loading={loading} />
-          <Footer/>
+          <Footer />
         </>
       )}
     </Layout>

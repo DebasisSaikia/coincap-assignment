@@ -76,7 +76,7 @@ const TableData = ({ data, pageSet }) => {
         </div>
         <div className="button_container">
           <button
-            className="view_more"
+            className={'view_more'}
             onClick={disable ? hideData : viewMore}
           >
             {disable ? "Hide " : "View More"}
