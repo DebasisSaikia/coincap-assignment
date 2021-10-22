@@ -65,7 +65,7 @@ const TableData = ({ data, pageSet }) => {
                     <td>$ {item.vwap24Hr.slice(0, 7)}</td>
                     <td>{item.supply.slice(0, 4)}</td>
                     <td>$ {item.volumeUsd24Hr.slice(0, 4)}</td>
-                    <td style={{ color: `red` }}>
+                    <td style={{ color:item.changePercent24Hr.indexOf('-') ? `green`:`red` }}>
                       {Number.parseFloat(item.changePercent24Hr).toFixed(2)}
                     </td>
                   </tr>
