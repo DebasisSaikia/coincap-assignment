@@ -18,6 +18,8 @@ const style = () => css`
     h2{
         margin-top: -1rem;
         text-align: center;
+        font-size: 22px;
+        font-weight: 400;
     }
   }
 `;

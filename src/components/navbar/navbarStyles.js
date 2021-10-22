@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 const style = () => css`
   width: 100%;
-  height: 70px;
+  height: 65px;
   position: sticky;
   top: 0;
   left: 0;
@@ -10,13 +10,13 @@ const style = () => css`
   z-index: 100;
   background-color: #fff;
   .navbar {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
-    padding-top: 0.3rem;
+    height: 65px;
+    padding-top: 0.5rem;
   }
   img {
     height: 30px;
