@@ -57,16 +57,16 @@ const TableData = ({ data, pageSet }) => {
                       />
                       <span>
                         {item.id}
-                        <p>{item.symbol}</p>
+                        <p>{item?.symbol}</p>
                       </span>
                     </td>
                     <td>$ {Number.parseFloat(item.priceUsd).toFixed(2)}</td>
-                    <td>{item.marketCapUsd.slice(0, 3)}b</td>
-                    <td>$ {item.vwap24Hr.slice(0, 7)}</td>
-                    <td>{item.supply.slice(0, 4)}</td>
-                    <td>$ {item.volumeUsd24Hr.slice(0, 4)}</td>
-                    <td style={{ color:item.changePercent24Hr.indexOf('-') ? `green`:`red` }}>
-                      {Number.parseFloat(item.changePercent24Hr).toFixed(2)}
+                    <td>{item?.marketCapUsd.slice(0, 3)}b</td>
+                    <td>$ {String(item?.vwap24Hr).slice(0,3)}</td>
+                    <td>{item?.supply.slice(0, 4)}</td>
+                    <td>$ {item?.volumeUsd24Hr.slice(0, 4)}</td>
+                    <td style={{ color:item?.changePercent24Hr.indexOf('-') ? `green`:`red` }}>
+                      {Number.parseFloat(item?.changePercent24Hr).toFixed(2)}
                     </td>
                   </tr>
                 );
